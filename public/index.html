@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chitkara BFHL Challenge</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <h1>Hierarchy Processor</h1>
+        <p>Enter node relations like <strong>A->B, A->C, B->D</strong></p>
+      </header>
+
+      <section class="card">
+        <label for="apiBase">API Base URL</label>
+        <input
+          id="apiBase"
+          type="text"
+          placeholder="Leave blank to use same host"
+        />
+
+        <label for="nodeInput">Node List</label>
+        <textarea id="nodeInput" rows="8" placeholder='["A->B","A->C","B->D"] or A->B, A->C, B->D'></textarea>
+
+        <button id="submitBtn">Submit</button>
+        <div id="errorBox" class="error hidden"></div>
+      </section>
+
+      <section id="resultSection" class="hidden">
+        <div class="grid">
+          <div class="card">
+            <h2>Identity</h2>
+            <div id="identity"></div>
+          </div>
+
+          <div class="card">
+            <h2>Summary</h2>
+            <div id="summary"></div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h2>Invalid Entries</h2>
+            <div id="invalidEntries"></div>
+          </div>
+
+          <div class="card">
+            <h2>Duplicate Edges</h2>
+            <div id="duplicateEdges"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Hierarchies</h2>
+          <div id="hierarchies"></div>
+        </div>
+
+        <div class="card">
+          <h2>Raw Response</h2>
+          <pre id="rawResponse"></pre>
+        </div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
